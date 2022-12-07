@@ -1,0 +1,35 @@
+<template>
+  <table>
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Account Name</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <template for:each={accData.data} for:item="accItem">
+      <tr key={accItem.Id}>
+        <td>
+          <lightning-input
+            type="radio"
+            name="radioButtonSelect"
+            value={accItem.Id}
+            onchange={handleChangeRadio}
+          ></lightning-input>
+        </td>
+        <td>{accItem.Name}</td>
+        <td>{accItem.Phone}</td>
+      </tr>
+    </template>
+  </table>
+
+  <template if:true={button}>
+    <div class="slds-m-aroung_large slds-p-around_large">
+      <lightning-button
+        variant="success"
+        label="Show Contacts"
+        onclick={showButton}
+      ></lightning-button>
+    </div>
+  </template>
+</template>

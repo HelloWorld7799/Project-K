@@ -1,0 +1,21 @@
+<template>
+  <template
+    if:true={records}
+    for:each={records}
+    for:item="con"
+    for:index="index"
+  >
+    <div class="slds-box" key={con.Id}>
+      <p>
+        <lightning-input
+          type="radio"
+          value={con.Id}
+          name="radioButtonSelect"
+          onchange={radioButton}
+        ></lightning-input>
+      </p>
+      <p>{con.FirstName} {con.LastName}</p>
+      <p>{con.Phone}</p>
+    </div>
+  </template>
+</template>

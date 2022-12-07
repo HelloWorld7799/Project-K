@@ -1,0 +1,25 @@
+<template>
+  <lightning-card title="Selected Contact Details">
+    <lightning-layout>
+      <lightning-layout-item>
+        <lightning-record-view-form
+          record-id={contacts}
+          object-api-name="Contact"
+        >
+          <lightning-output-field
+            field-name="FirstName"
+          ></lightning-output-field>
+          <lightning-output-field
+            field-name="LastName"
+          ></lightning-output-field>
+          <lightning-output-field
+            field-name="AccountId"
+          ></lightning-output-field>
+          <lightning-output-field
+            field-name="LastModifiedById"
+          ></lightning-output-field>
+        </lightning-record-view-form>
+      </lightning-layout-item>
+    </lightning-layout>
+  </lightning-card>
+</template>

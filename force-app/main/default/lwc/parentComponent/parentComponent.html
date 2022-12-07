@@ -1,0 +1,23 @@
+<template>
+  <template if:true={conId}>
+    <lightning-card title="Selected Contact" icon-name="standard:account">
+      <lightning-record-view-form record-id={conId} object-api-name="Contact">
+        <div class="slds-box slds-theme_default">
+          <lightning-output-field
+            field-name="LastName"
+          ></lightning-output-field>
+          <lightning-output-field
+            field-name="FirstName"
+          ></lightning-output-field>
+          <lightning-output-field field-name="Phone"></lightning-output-field>
+        </div>
+      </lightning-record-view-form>
+    </lightning-card>
+  </template>
+  <lightning-card title="Select Any Contact">
+    <c-child-component
+      accountid={recordId}
+      ondemo={handleChild}
+    ></c-child-component>
+  </lightning-card>
+</template>
